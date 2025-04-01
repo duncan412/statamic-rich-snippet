@@ -29,9 +29,9 @@
     }
   ],
   "require": {
-    "php": "^7.4",
-    "spatie/schema-org": "^2.14",
-    "statamic/cms": "^3.0.14"
+    "php": "^8.2",
+    "spatie/schema-org": "^3.0",
+    "statamic/cms": "^5.0.0"
   },
   "require-dev": {
     "orchestra/testbench": "4.*|5.*",
