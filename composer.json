@@ -1,5 +1,5 @@
 {
-  "name": "concept7/statamic-rich-snippet",
+  "name": "optimoapps/statamic-rich-snippet",
   "description": "Schema Json-ld Rich Snippet",
   "keywords": [
     "statamic",
@@ -61,4 +61,3 @@
   "minimum-stability": "dev",
   "prefer-stable": true
 }
-
