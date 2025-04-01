@@ -9,7 +9,9 @@
  *
  */
 
+use OptimoApps\RichSnippet\Http\Controllers\RichSnippetController;
+
 Route::middleware('web')->group(function () {
-    Route::get('/optimoapps/richsnippet/', 'RichSnippetController@index')->name('optimoapps.rich-snippet.index');
-    Route::post('/optimoapps/richsnippet/', 'RichSnippetController@update')->name('optimoapps.rich-snippet.update');
+    Route::get('/optimoapps/richsnippet/', [RichSnippetController::class, 'index'])->name('optimoapps.rich-snippet.index');
+    Route::post('/optimoapps/richsnippet/', [RichSnippetController::class, 'update'])->name('optimoapps.rich-snippet.update');
 });

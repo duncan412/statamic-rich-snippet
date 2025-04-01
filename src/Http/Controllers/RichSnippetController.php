@@ -31,7 +31,7 @@ class RichSnippetController extends Controller
      */
     public function index(Request $request)
     {
-        $blueprint = Blueprint::makeFromSections(RichSnippetFields::getOrganizationFields());
+        $blueprint = Blueprint::makeFromTabs(RichSnippetFields::getOrganizationFields());
         $fields = $blueprint->fields();
         $values = collect(YAML::file(__DIR__.'/../content/rich-snippet.yaml')->parse())
             ->merge(YAML::file(base_path('content/rich-snippet.yaml'))->parse())
