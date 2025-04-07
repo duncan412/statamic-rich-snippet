@@ -11,7 +11,7 @@
 
 use OptimoApps\RichSnippet\Http\Controllers\RichSnippetController;
 
-Route::middleware('web')->group(function () {
+Route::middleware('statamic.cp.authenticated')->group(function () {
     Route::get('/optimoapps/richsnippet/', [RichSnippetController::class, 'index'])->name('optimoapps.rich-snippet.index');
     Route::post('/optimoapps/richsnippet/', [RichSnippetController::class, 'update'])->name('optimoapps.rich-snippet.update');
 });
