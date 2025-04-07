@@ -52,7 +52,7 @@ class RichSnippetController extends Controller
      */
     public function update(Request $request): void
     {
-        $blueprint = Blueprint::makeFromSections(RichSnippetFields::getOrganizationFields());
+        $blueprint = Blueprint::makeFromTabs(RichSnippetFields::getOrganizationFields());
         $fields = $blueprint->fields();
 
         $fields = $fields->addValues($request->all());
