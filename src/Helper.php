@@ -14,19 +14,23 @@ use Statamic\Facades\Markdown;
 /*
  *  Generate HTML from content
  */
-if (! function_exists('generateHtml')) {
-  function generateHtml($content)
-  {
-    if (is_array($content)) {
-      return  (new \Tiptap\Editor)->setContent([
-        'type' => 'doc',
-        'content' => $content,
-      ])->getHTML();
-    }
-    if (Markdown::hasParser($content)) {
-      return Markdown::parser($content);
-    }
 
-    return $content;
-  }
+if (! function_exists('generateHtml')) {
+    function generateHtml($content)
+    {
+        if (is_array($content)) {
+            return (new \Tiptap\Editor)->setContent([
+                'type' => 'doc',
+                'content' => $content,
+            ])->getHTML();
+        }
+        try {
+            if (Markdown::hasParser($content)) {
+                return Markdown::parser($content);
+            }
+        } catch (\TypeError) {
+        }
+
+        return $content;
+    }
 }
